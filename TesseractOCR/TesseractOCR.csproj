@@ -28,6 +28,11 @@ which support the legacy engine, for example those from the tessdata repository.
     <RepositoryType>git</RepositoryType>
     <PackageReadmeFile>README.md</PackageReadmeFile>
 	</PropertyGroup>
+
+	<PropertyGroup Condition="$([MSBuild]::IsOSPlatform('Windows'))">
+  		<DefineConstants>OS_WINDOWS</DefineConstants>
+	</PropertyGroup>
+
 	<ItemGroup>
 		<Folder Include="x86\" />
 		<Folder Include="x64\" />
